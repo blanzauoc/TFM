@@ -1,0 +1,9 @@
+{
+	"network-configs": {
+		"net_bjlanza": {
+			"name": "net_bjlanza",
+			"profile": "./connection-profile/net_bjlanza.json"
+		}
+	},
+	"license": "Apache-2.0"
+}

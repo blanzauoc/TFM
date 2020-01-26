@@ -1,0 +1,109 @@
+{
+	"name": "net_bjlanza",
+	"version": "1.0.0",
+	"client": {
+		"tlsEnable": false,
+		"adminUser": "admin",
+		"adminPassword": "adminpw",
+		"enableAuthentication": false,
+		"organization": "Org1MSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "3000"
+				},
+				"orderer": "3000"
+			}
+		}
+	},
+	"channels": {
+		"canaldmp": {
+			"peers": {
+				"peer0.org3.bjlanza.es": {},
+				"peer0.org1.bjlanza.es": {},
+				"peer0.org2.bjlanza.es": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"Org1MSP": {
+			"mspid": "Org1MSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org1.bjlanza.es/users/Admin@org1.bjlanza.es/msp/keystore/71c8887809fef4a19102e6d2bdb00baaa7623ac17a828dfa3adf028bc49e46f9_sk"
+			},
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org1.bjlanza.es/users/Admin@org1.bjlanza.es/msp/signcerts/Admin@org1.bjlanza.es-cert.pem"
+			}
+		},
+		"Org2MSP": {
+			"mspid": "Org2MSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org2.bjlanza.es/users/Admin@org2.bjlanza.es/msp/keystore/61989cacd9fa454ad988749cc1494d2b0961b458f42f1210bee95f4d66edab75_sk"
+			},
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org2.bjlanza.es/users/Admin@org2.bjlanza.es/msp/signcerts/Admin@org2.bjlanza.es-cert.pem"
+			}
+		},
+		"Org3MSP": {
+			"mspid": "Org3MSP",
+			"fullpath": true,
+			"adminPrivateKey": {
+				"path": "/tmp/crypto/peerOrganizations/org3.bjlanza.es/users/Admin@org3.bjlanza.es/msp/keystore/9f5cff477ec0c4a9db45ff65c5d9e54a03e7926ddb7e0e33748cdbabd44e8aa8_sk"
+			},
+			"signedCert": {
+				"path": "/tmp/crypto/peerOrganizations/org3.bjlanza.es/users/Admin@org3.bjlanza.es/msp/signcerts/Admin@org3.bjlanza.es-cert.pem"
+			}
+		}		
+	},
+	"peers": {
+		"peer0.org1.bjlanza.es": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org1.bjlanza.es/peers/peer0.org1.bjlanza.es/tls/ca.crt"
+			},
+			"url": "grpc://peer0.org1.bjlanza.es:7051",
+			"eventUrl": "grpc://peer0.org1.bjlanza.es:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org1.bjlanza.es"
+			}
+		},
+		"peer0.org2.bjlanza.es": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org2.bjlanza.es/peers/peer0.org2.bjlanza.es/tls/ca.crt"
+			},
+			"url": "grpc://peer0.org2.bjlanza.es:7051",
+			"eventUrl": "grpc://peer0.org2.bjlanza.es:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org2.bjlanza.es"
+			}
+		},
+		"peer0.org3.bjlanza.es": {
+			"tlsCACerts": {
+				"path": "/tmp/crypto/peerOrganizations/org3.bjlanza.es/peers/peer0.org3.bjlanza.es/tls/ca.crt"
+			},
+			"url": "grpc://peer0.org3.bjlanza.es:7051",
+			"eventUrl": "grpc://peer0.org3.bjlanza.es:7053",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.org3.bjlanza.es"
+			}
+		}
+	},
+	"orderers": {
+		"orderer.bjlanza.es": {
+			"url": "grpc://orderer.bjlanza.es:7050",
+			"grpcOptions": {
+			  "ssl-target-name-override": "orderer.bjlanza.es"
+		  }
+		}
+	}
+}

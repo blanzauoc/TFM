@@ -1,0 +1,21 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: bjlanza.es
+    Specs:
+      - Hostname: orderer
+PeerOrgs:
+  - Name: Org1
+    Domain: org1.bjlanza.es
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+  - Name: Org2
+    Domain: org2.bjlanza.es
+    EnableNodeOUs: true
+    Template:
+      Count: 1
+  - Name: Org3
+    Domain: org3.bjlanza.es
+    EnableNodeOUs: true
+    Template:
+      Count: 1
